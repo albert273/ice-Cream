@@ -1,0 +1,86 @@
+button.active {
+  background-color: #f7337f;
+  color: #fff;
+}
+
+.menuBack {
+  z-index: 4;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.8);
+  inset: 0;
+}
+@keyframes show {
+  0% {
+    scale: 0;
+  }
+  60% {
+    scale: 1.2;
+  }
+  100% {
+    scale: 1;
+  }
+}
+.menuBack .model {
+  animation: show 0.5s 1;
+  width: 80%;
+  margin-top: 2rem;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: rgba(89, 87, 87, 0.313);
+  border: 0.5px solid rgba(255, 255, 255, 0.071);
+  border-radius: 30px;
+  padding: 2rem;
+}
+.menuBack ul.model li {
+  margin: 15px 0 0px 5px;
+  border-bottom: 1px solid rgba(125, 125, 125, 0.1);
+  padding-bottom: 10px;
+}
+.menuBack ul.model li:hover a {
+  margin-left: 40px;
+  text-shadow: 0.1px 0.1px 10px #f7337f;
+  color: #f7337f;
+  transition: 0.5s;
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
+.menuBack ul.model li a {
+  color: #f7337f;
+}
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.menuBack ul.model li:nth-child(6) {
+  border-bottom: 0;
+}
+
+@media (max-width: 900px) {
+  dev.nav {
+    display: none;
+  }
+}
+
+.icon-menu {
+  background-color: rgba(255, 255, 255, 0.224);
+  border: 1px solid rgba(255, 255, 255, 0.224);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2.4rem;
+  width: 2.4rem;
+  border-radius: 50%;
+  color: black;
+}
+
+.icon-cross {
+  color: white;
+  transition: 0.3s;
+}
+.icon-cross:hover {
+  color: red;
+  text-shadow: 0.1px 0.1px 10px #f7337f;
+  rotate: 180deg;
+}

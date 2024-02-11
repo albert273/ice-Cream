@@ -1,0 +1,28 @@
+img {
+    width: 450px;
+    border-radius: 20px;
+}
+
+@media (max-width: 700px) {
+    img {
+        width: 300px;
+        height: 250px;
+    }
+
+    img.top {
+        width: 300px;
+        height: 180px;
+    }
+}
+
+@media (max-width: 490px) {
+    img {
+display: none;
+    }
+
+    div .story {
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+}
