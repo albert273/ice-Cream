@@ -41,13 +41,16 @@ export const SignUp = () => {
     setOpen(true);
   };
   async function onSubmit() {
-    console.log("data");
     handleClick();
-    let res = await axios.post("", {
+    try {
+      let res = await axios.post("", {
       name: name,
       email: email,
       password: password,
     });
+    } catch (error) {
+	console.error(error);
+}
   }
   return (
     <>
