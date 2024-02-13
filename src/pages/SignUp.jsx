@@ -42,15 +42,20 @@ export const SignUp = () => {
   };
   async function onSubmit() {
     handleClick();
-    try {
-      let res = await axios.post("", {
-      name: name,
-      email: email,
-      password: password,
-    });
-    } catch (error) {
-	console.error(error);
-}
+    const res = await axios.post(
+      "",
+      {
+        headers: {
+          Accept: "application/json",
+          "content-type": "application/json",
+        },
+      },
+      {
+        name: name,
+        email: email,
+        password: password,
+      }
+    );
   }
   return (
     <>
