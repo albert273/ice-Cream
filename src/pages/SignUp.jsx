@@ -9,14 +9,16 @@ import {
   Typography,
 } from "@mui/material";
 import Header from "../components/header/Header";
-import React from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import { useState } from "react";
+
 
 const regEmail =
   /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-const regPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/;
+const regPassword =
+  /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/;
 
 export const SignUp = () => {
   const {
@@ -25,11 +27,11 @@ export const SignUp = () => {
     formState: { errors },
   } = useForm();
 
-  const [name, setName] = React.useState("");
-  const [email, setEmail] = React.useState("");
-  const [password, setpassword] = React.useState('');
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setpassword] = useState("");
 
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
   const handleClose = (event, reason) => {
     if (reason === "clickaway") {
       return;
@@ -43,13 +45,7 @@ export const SignUp = () => {
   async function onSubmit() {
     handleClick();
     const res = await axios.post(
-      "",
-      {
-        headers: {
-          Accept: "application/json",
-          "content-type": "application/json",
-        },
-      },
+      "http://localhost:8000/user",
       {
         name: name,
         email: email,
@@ -163,7 +159,7 @@ export const SignUp = () => {
               </Stack>
 
               <Stack direction={"row"} gap={2}>
-              <Button
+                <Button
                   variant="contained"
                   type="submit"
                   sx={{
@@ -214,3 +210,4 @@ export const SignUp = () => {
     </>
   );
 };
+
